@@ -1,0 +1,32 @@
+{
+  "Produit": [
+	  {
+		"Nom" : "Livre DnD",
+		"Description" : "Lorem ipsum dolor sit amet. Qui sunt similique est mollitia dicta eum iure nihil. Vel dolorum cupiditate est quaerat dolorum qui illum natus sit omnis omnis.Et esse dolor ab dolor quia ut adipisci ducimus aut distinctio commodi sed rerum voluptates qui dolor voluptates. Et aperiam porro et pariatur laboriosam ut alias debitis eos labore eius qui voluptatibus neque. Non quia facilis ut voluptatibus nisi et odio ipsam. Et quasi dolores non quasi esse quo praesentium consequatur ea quia pariatur ut laborum quas eum architecto rerum id fugit adipisci.",
+		"PrixBase" : 24.99,
+		"PrixPromotion" : 20.99,
+		"Type" : "Livre",
+		"id" : 1  
+	  }
+		
+  ],
+  "Type": [
+	{
+		"NomType" : "Livre",
+		"id" : 1
+	},
+	{
+		"NomType" : "Dé",
+		"id" : 2
+	},
+	{
+		"NomType" : "Map Combat",
+		"id" : 2
+	},
+	{
+		"NomType" : "Figurine",
+		"id" : 2
+	}
+		
+  ]
+}

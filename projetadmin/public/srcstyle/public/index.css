@@ -44,9 +44,9 @@
 }
 
 .navbar-toggler-icon {
-  background-image: url("img/marche.png");
+  background-image: url("/img/marche.png");
   /* Icone du bouton */
-  background-size: cover;
+  background-size: cover; 
   /* Taille de l'icone */
   width: 24px;
   /* Largeur de l'icone */
