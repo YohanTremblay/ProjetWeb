@@ -22,8 +22,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-     "sass": "node node_modules\\sass\\sass.js --watch src\\srcstyle\\style\\index.sass:src\\srcstyle\\public\\index.css",
-    "json": "node node_modules\\json-server\\lib\\cli\\bin.js db.json"
+    "sass": "node node_modules\\sass\\sass.js --watch src\\srcstyle\\style\\index.sass:src\\srcstyle\\public\\index.css",
+    "json": "node node_modules\\json-server\\lib\\cli\\bin.js ..\\db.json"
   },
   "eslintConfig": {
     "extends": [
