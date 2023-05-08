@@ -11,10 +11,13 @@ function CardList(props){
             setCard(json);
     });
         },[])
-
+    
     return card.map((element, index) =>
     {
-        return <Card key={index} id={element.id} Description={element.Description} Nom={element.Nom} PrixBase={element.PrixBase} PrixPromotion={element.PrixPromotion}></Card>
+        // if(element.PrixBase != element.PrixPromotion)
+        // {
+            return <Card key={index} Type={element.Type} id={element.id} Description={element.Description} Nom={element.Nom} PrixBase={element.PrixBase} PrixPromotion={element.PrixPromotion} NombreItem={element.NombreItem} Image={element.Image}></Card>
+        // }
     });
 
 }

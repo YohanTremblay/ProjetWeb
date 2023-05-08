@@ -4,23 +4,40 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import 'jquery';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
-import './index.css';
-import App from './App';
+import './index2.css';
 import reportWebVitals from './reportWebVitals';
-import './index.css';
 import PagePrinc from "./routePageprincipale"
+import Detail from "./routeDetail"
+import './srcstyle/public/index.css'
+import RouteAjout from './routeAjout';
+import RouteConnexion from './routeConnexion';
 
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <RouteConnexion />
+  },
+  {
+    path: "/PagePrinc",
     element: <PagePrinc />
+  },
+  {
+    path: "/routeDetail/:id",
+    loader: async({params})=>{
+      return  fetch(`http://localhost:3000/Produit/${params.id}`);
+    },
+    element: <Detail />
+  },
+  {
+    path: "/routeAjout",
+    element: <RouteAjout />
   }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
