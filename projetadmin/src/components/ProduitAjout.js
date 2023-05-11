@@ -12,6 +12,7 @@ function ProduitAjout(props) {
     const [type, setType] = useState("");  
     const [Image, setImage] = useState("");   
     const [typesList, setTypesList] = useState([]);
+    const [Stripe, setStripe] = useState("");
 
 
   useEffect(() => {
@@ -29,11 +30,11 @@ function ProduitAjout(props) {
   function AjoutAPI() 
   {
     console.log(Nom + " " + Description + " " + PrixBase + " " + nombre + " " + type );
-    PutProduct(Nom, Description, PrixBase, nombre, type, NombreItem, Image);
+    PutProduct(Nom, Description, PrixBase, nombre, type, NombreItem, Image, Stripe);
   }
   
   
-  function PutProduct(nom, description, prixBase, promotion, type, NombreItem, Image) {
+  function PutProduct(nom, description, prixBase, promotion, type, NombreItem, Image, Stripe) {
     fetch("http://localhost:3000/Produit/", {
       method: "POST",
       body: JSON.stringify({
@@ -43,7 +44,8 @@ function ProduitAjout(props) {
         PrixPromotion: promotion,
         Type: type,
         NombreItem : NombreItem,
-        Image : Image
+        Image : Image,
+        Lien : Stripe
       }),
       headers: {
         "Content-type": "application/json; charset=UTF-8",
@@ -103,6 +105,16 @@ function ProduitAjout(props) {
           className="form-control"
           onChange={(e) => setImage(e.target.value)}
         />
+        <label htmlFor="stripe">Lien stripe :</label>
+        <input
+          required="required"
+          type="text"
+          id="stripe"
+          name="stripe"
+          value={Stripe}
+          className="form-control"
+          onChange={(e) => setStripe(e.target.value)}
+        />
         <label htmlFor="prixBase">Prix de base :</label>
         <input
           required="required"
@@ -132,6 +144,7 @@ function ProduitAjout(props) {
           <option value={80}>80%</option>
           <option value={90}>90%</option>
         </select>
+        
         <h6> Prix avec promotion: {nombre}</h6>
         <label htmlFor="type">Type:</label>
         <select id="type" name="type" value={type} onChange={handleTypeChange}>

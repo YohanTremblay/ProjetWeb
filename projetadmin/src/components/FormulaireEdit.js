@@ -9,6 +9,7 @@ function FormulaireEdit(props) {
   const [pourcentage, setPourcentage] = useState(0);
   const [nombre, setNombre] = useState(0);
   const [type, setType] = useState(props.TypePro);
+  const [Stripe, setStripe] = useState(props.Lien);
   const [typesList, setTypesList] = useState([]);
   const [Image, setImage] = useState("");
 
@@ -26,7 +27,7 @@ function FormulaireEdit(props) {
   }
   function handleSubmit() {
     console.log("Le nom du produit est", Image);
-    PutProduct(props.id, Nom, Description, PrixBase, nombre, type, NombreItem, Image);
+    PutProduct(props.id, Nom, Description, PrixBase, nombre, type, NombreItem, Image, Stripe);
   }
   
   function PutProduct(id, nom, description, prixBase, promotion, type, NombreItem, Image) {
@@ -39,7 +40,8 @@ function FormulaireEdit(props) {
         PrixPromotion: promotion,
         Type: type,
         NombreItem : NombreItem,
-        Image : Image
+        Image : Image,
+        Lien : Stripe
       }),
       headers: {
         "Content-type": "application/json; charset=UTF-8",
@@ -136,6 +138,16 @@ function FormulaireEdit(props) {
           value={Image}
           className="form-control"
           onChange={(e) => setImage(e.target.value)}
+        />
+        <label htmlFor="Stripe">Lien stripe :</label>
+        <input
+          required="required"
+          type="text"
+          id="Stripe"
+          name="Stripe"
+          value={Stripe}
+          className="form-control"
+          onChange={(e) => setStripe(e.target.value)}
         />
 
       </div>
